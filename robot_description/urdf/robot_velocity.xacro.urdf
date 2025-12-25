@@ -1,0 +1,542 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="robot" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:property name="max_toque" value="10"/>
+
+  <xacro:arg name="namespace" default="" />
+
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.00118298274977299 -0.000202466429830933 -0.00799542338406119"
+        rpy="0 0 0" />
+      <mass
+        value="1.57801429609998" />
+      <inertia
+        ixx="0.00711775614084341"
+        ixy="1.32397904844903E-07"
+        ixz="5.08225175075743E-06"
+        iyy="0.00693184939500784"
+        iyz="-1.06289048684116E-06"
+        izz="0.0138757886228878" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find robot_description)/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find robot_description)/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="front_legs">
+    <inertial>
+      <origin
+        xyz="0.0724288948540406 -0.125328378965548 0.13804996869958"
+        rpy="0 0 0" />
+      <mass
+        value="0.652830622865746" />
+      <inertia
+        ixx="0.00155323770452922"
+        ixy="0.000459566689095663"
+        ixz="2.10520902765384E-08"
+        iyy="0.00102257530095905"
+        iyz="1.21177311324089E-08"
+        izz="0.00148286960228537" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find robot_description)/meshes/front_legs.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find robot_description)/meshes/front_legs.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="frontlegs"
+    type="revolute">
+    <origin
+      xyz="0.10069 0.13805 -0.032561"
+      rpy="1.5708 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="front_legs" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="1.0"
+      effort="10"
+      velocity="10" />
+  </joint>
+  <link
+    name="front_left_wheel">
+    <inertial>
+      <origin
+        xyz="6.13462918514496E-05 -9.69919081378612E-05 -0.0167269999862523"
+        rpy="0 0 0" />
+      <mass
+        value="0.552826529033843" />
+      <inertia
+        ixx="0.000653079638818935"
+        ixy="-1.22120134913705E-13"
+        ixz="-4.19791386063403E-19"
+        iyy="0.000653079638630268"
+        iyz="-6.76502373399496E-19"
+        izz="0.000899629682636144" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find robot_description)/meshes/front_left_wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision name="front_left_wheel_collision">
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find robot_description)/meshes/front_left_wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="frontleftwheel"
+    type="continuous">
+    <origin
+      xyz="0.144563402949832 -0.250442529986424 -0.0788000000000003"
+      rpy="0 0 0" />
+    <parent
+      link="front_legs" />
+    <child
+      link="front_left_wheel" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      effort="${max_toque}"
+      velocity="10" />
+    <dynamics
+      damping="0.1"
+      friction="0.5" />
+  </joint>
+  <link
+    name="front_right_wheel">
+    <inertial>
+      <origin
+        xyz="5.33243104842707E-05 -0.000101623391511901 0.0147730000137475"
+        rpy="0 0 0" />
+      <mass
+        value="0.552826529033843" />
+      <inertia
+        ixx="0.000653079638571678"
+        ixy="-2.06360514824247E-14"
+        ixz="5.42748859639298E-19"
+        iyy="0.000653079638877527"
+        iyz="6.01225562238054E-19"
+        izz="0.000899629682636147" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find robot_description)/meshes/front_right_wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision name="front_right_wheel_collision">
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find robot_description)/meshes/front_right_wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="frontrightwheel"
+    type="continuous">
+    <origin
+      xyz="0.144713688338819 -0.250355762676638 0.3549"
+      rpy="0 0 0" />
+    <parent
+      link="front_legs" />
+    <child
+      link="front_right_wheel" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      effort="${max_toque}"
+      velocity="10" />
+    <dynamics
+      damping="0.1"
+      friction="0.5" />
+  </joint>
+  <link
+    name="back_legs">
+    <inertial>
+      <origin
+        xyz="-0.0721712418733433 -0.125798853881793 0.13805481863796"
+        rpy="0 0 0" />
+      <mass
+        value="0.652830622865746" />
+      <inertia
+        ixx="0.00155323770452922"
+        ixy="-0.000459566689095663"
+        ixz="2.1052090276947E-08"
+        iyy="0.00102257530095905"
+        iyz="-1.21177311328373E-08"
+        izz="0.00148286960228537" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find robot_description)/meshes/back_legs.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find robot_description)/meshes/back_legs.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="backlegs"
+    type="revolute">
+    <origin
+      xyz="-0.10113 0.13805 -0.032091"
+      rpy="1.5708 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="back_legs" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.0"
+      upper="0"
+      effort="10"
+      velocity="10" />
+  </joint>
+  <link
+    name="back_left_wheel">
+    <inertial>
+      <origin
+        xyz="-5.3324301719726E-05 -0.000101623406691398 -0.0167269999862527"
+        rpy="0 0 0" />
+      <mass
+        value="0.552826529033843" />
+      <inertia
+        ixx="0.000653079638818937"
+        ixy="-1.22119429758776E-13"
+        ixz="-5.09184528024827E-19"
+        iyy="0.000653079638630268"
+        iyz="-4.69471296045912E-19"
+        izz="0.000899629682636147" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find robot_description)/meshes/back_left_wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision name="back_left_wheel_collision">
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find robot_description)/meshes/back_left_wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="backleftwheel"
+    type="continuous">
+    <origin
+      xyz="-0.144456035358125 -0.250826237592881 -0.0787952126624598"
+      rpy="0 0 0" />
+    <parent
+      link="back_legs" />
+    <child
+      link="back_left_wheel" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      effort="${max_toque}"
+      velocity="10" />
+    <dynamics
+      damping="0.1"
+      friction="0.5" />
+  </joint>
+  <link
+    name="back_right_wheel">
+    <inertial>
+      <origin
+        xyz="7.52530908343374E-06 -0.000163982494221449 0.0148120867619583"
+        rpy="0 0 0" />
+      <mass
+        value="0.551613409446365" />
+      <inertia
+        ixx="0.00065295813068353"
+        ixy="-8.66214301819524E-09"
+        ixz="-4.61800086349078E-19"
+        iyy="0.000653069115759918"
+        iyz="5.13564675405463E-20"
+        izz="0.000899501745908998" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find robot_description)/meshes/back_right_wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision name="back_right_wheel_collision">
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find robot_description)/meshes/back_right_wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="backrightwheel"
+    type="continuous">
+    <origin
+      xyz="-0.144305749969139 -0.250913004902668 0.35490478733754"
+      rpy="0 0 0" />
+    <parent
+      link="back_legs" />
+    <child
+      link="back_right_wheel" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      effort="${max_toque}"
+      velocity="10" />
+    <dynamics
+      damping="0.1"
+      friction="0.5" />
+  </joint>
+
+  <!-- ros2_control hardware & joint interfaces (Gazebo as the hardware backend) -->
+  <ros2_control name="GazeboSimSystem" type="system">
+    <hardware>
+      <!-- Gazebo Sim system plugin backend -->
+      <plugin>gz_ros2_control/GazeboSimSystem</plugin>
+    </hardware>
+
+    <!-- Wheel joints use velocity commands -->
+    <joint name="frontleftwheel">
+      <command_interface name="velocity"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+    <joint name="backleftwheel">
+      <command_interface name="velocity"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+    <joint name="frontrightwheel">
+      <command_interface name="velocity"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+    <joint name="backrightwheel">
+      <command_interface name="velocity"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+
+    <!-- Leg pitch joints use position commands -->
+    <joint name="frontlegs">
+      <command_interface name="position"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+    <joint name="backlegs">
+      <command_interface name="position"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+  </ros2_control>
+
+  <!-- Gazebo Sim plugin that spins up controller_manager and connects to ros2_control -->
+
+  <gazebo>
+    <plugin filename="gz_ros2_control-system" name="gz_ros2_control::GazeboSimROS2ControlPlugin">
+      <ros>
+        <namespace>$(arg namespace)</namespace>
+      </ros>
+      <parameters>$(find robot_gazebo)/config/robot_velocity_controller.yaml</parameters>
+    </plugin>
+  </gazebo>
+
+  <!-- ===== Wheel contact friction (Balanced home preset) ===== -->
+  <!-- Forward grip higher than lateral for easier skid turns -->
+  <!-- Repeat for each wheel by link reference -->
+  <gazebo reference="front_left_wheel::front_left_wheel_collision">
+    <surface>
+      <friction>
+        <ode>
+          <mu>0.8</mu>
+          <mu2>0.55</mu2>
+          <slip1>0.02</slip1>
+          <slip2>0.03</slip2>
+        </ode>
+      </friction>
+      <contact>
+        <ode>
+          <kp>1e6</kp>
+          <kd>20</kd>
+          <min_depth>0.001</min_depth>
+        </ode>
+      </contact>
+    </surface>
+  </gazebo>
+
+  <gazebo reference="front_right_wheel::front_right_wheel_collision">
+    <surface>
+      <friction>
+        <ode>
+          <mu>0.8</mu>
+          <mu2>0.55</mu2>
+          <slip1>0.02</slip1>
+          <slip2>0.03</slip2>
+        </ode>
+      </friction>
+      <contact>
+        <ode>
+          <kp>1e6</kp>
+          <kd>20</kd>
+          <min_depth>0.001</min_depth>
+        </ode>
+      </contact>
+    </surface>
+  </gazebo>
+
+  <gazebo reference="back_left_wheel::back_left_wheel_collision">
+    <surface>
+      <friction>
+        <ode>
+          <mu>0.8</mu>
+          <mu2>0.55</mu2>
+          <slip1>0.02</slip1>
+          <slip2>0.03</slip2>
+        </ode>
+      </friction>
+      <contact>
+        <ode>
+          <kp>1e6</kp>
+          <kd>20</kd>
+          <min_depth>0.001</min_depth>
+        </ode>
+      </contact>
+    </surface>
+  </gazebo>
+
+  <gazebo reference="back_right_wheel::back_right_wheel_collision">
+    <surface>
+      <friction>
+        <ode>
+          <mu>0.8</mu>
+          <mu2>0.55</mu2>
+          <slip1>0.02</slip1>
+          <slip2>0.03</slip2>
+        </ode>
+      </friction>
+      <contact>
+        <ode>
+          <kp>1e6</kp>
+          <kd>20</kd>
+          <min_depth>0.001</min_depth>
+        </ode>
+      </contact>
+    </surface>
+  </gazebo>
+
+
+</robot>

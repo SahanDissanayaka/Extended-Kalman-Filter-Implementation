@@ -1,0 +1,20 @@
+{
+  "python.autoComplete.extraPaths": [
+    "/home/sahan-dissanayaka/fyp_robot_ws/install/robot_path/lib/python3.12/site-packages",
+    "/home/sahan-dissanayaka/fyp_robot_ws/install/robot_ekf/lib/python3.12/site-packages",
+    "/home/sahan-dissanayaka/ros2_ws/install/zumo_msgs/lib/python3.12/site-packages",
+    "/home/sahan-dissanayaka/ros2_ws/install/ros2_fundamentals_example/lib/python3.12/site-packages",
+    "/home/sahan-dissanayaka/fyp_robot_ws/install/fyp_robot_path/lib/python3.12/site-packages",
+    "/home/sahan-dissanayaka/fyp_robot_ws/install/fyp_robot_ekf/lib/python3.12/site-packages",
+    "/opt/ros/jazzy/lib/python3.12/site-packages"
+  ],
+  "python.analysis.extraPaths": [
+    "/home/sahan-dissanayaka/fyp_robot_ws/install/robot_path/lib/python3.12/site-packages",
+    "/home/sahan-dissanayaka/fyp_robot_ws/install/robot_ekf/lib/python3.12/site-packages",
+    "/home/sahan-dissanayaka/ros2_ws/install/zumo_msgs/lib/python3.12/site-packages",
+    "/home/sahan-dissanayaka/ros2_ws/install/ros2_fundamentals_example/lib/python3.12/site-packages",
+    "/home/sahan-dissanayaka/fyp_robot_ws/install/fyp_robot_path/lib/python3.12/site-packages",
+    "/home/sahan-dissanayaka/fyp_robot_ws/install/fyp_robot_ekf/lib/python3.12/site-packages",
+    "/opt/ros/jazzy/lib/python3.12/site-packages"
+  ]
+}

@@ -1,0 +1,521 @@
+<?xml version="1.0"?>
+<!-- Generated: 2025-10-14T08:30:22.240365 -->
+<sdf version="1.10">
+  <world name="stair_world">
+    <gravity>0 0 -9.81</gravity>
+
+    <!-- Simple sun light (avoid model://sun dependency) -->
+    <light type="directional" name="sun">
+      <cast_shadows>true</cast_shadows>
+      <pose>0 0 10 0 0 0</pose>
+      <diffuse>1 1 1 1</diffuse>
+      <specular>0.1 0.1 0.1 1</specular>
+      <direction>-0.5 0.2 -1</direction>
+    </light>
+
+    <!-- Simple infinite ground plane (avoid model://ground_plane dependency) -->
+    <model name="ground_plane">
+      <static>true</static>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>1.0</mu>
+                <mu2>1.0</mu2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <material>
+            <ambient>0.8 0.8 0.8 1</ambient>
+            <diffuse>0.8 0.8 0.8 1</diffuse>
+            <specular>0.8 0.8 0.8 1</specular>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- Static staircase -->
+    <model name="staircase">
+      <static>true</static>
+
+      <link name="step_00">
+        <pose>0.1125 0.0000 0.0600 0 0 0.000000</pose>
+        <collision name="col">
+          <geometry><box><size>0.225 2.5 0.12</size></box></geometry>
+          <surface><friction><ode><mu>10.0</mu><mu2>10.0</mu2></ode></friction></surface>
+        </collision>
+        <visual name="vis">
+          <geometry><box><size>0.225 2.5 0.12</size></box></geometry>
+          <material>
+            <ambient>0.3 0.3 0.35 1</ambient>
+            <diffuse>0.4 0.4 0.45 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    
+
+      <link name="step_01">
+        <pose>0.3375 0.0000 0.1800 0 0 0.000000</pose>
+        <collision name="col">
+          <geometry><box><size>0.225 2.5 0.12</size></box></geometry>
+          <surface><friction><ode><mu>10.0</mu><mu2>10.0</mu2></ode></friction></surface>
+        </collision>
+        <visual name="vis">
+          <geometry><box><size>0.225 2.5 0.12</size></box></geometry>
+          <material>
+            <ambient>0.3 0.3 0.35 1</ambient>
+            <diffuse>0.4 0.4 0.45 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    
+
+      <link name="step_02">
+        <pose>0.5625 0.0000 0.3000 0 0 0.000000</pose>
+        <collision name="col">
+          <geometry><box><size>0.225 2.5 0.12</size></box></geometry>
+          <surface><friction><ode><mu>10.0</mu><mu2>10.0</mu2></ode></friction></surface>
+        </collision>
+        <visual name="vis">
+          <geometry><box><size>0.225 2.5 0.12</size></box></geometry>
+          <material>
+            <ambient>0.3 0.3 0.35 1</ambient>
+            <diffuse>0.4 0.4 0.45 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    
+
+      <link name="step_03">
+        <pose>0.7875 0.0000 0.4200 0 0 0.000000</pose>
+        <collision name="col">
+          <geometry><box><size>0.225 2.5 0.12</size></box></geometry>
+          <surface><friction><ode><mu>10.0</mu><mu2>10.0</mu2></ode></friction></surface>
+        </collision>
+        <visual name="vis">
+          <geometry><box><size>0.225 2.5 0.12</size></box></geometry>
+          <material>
+            <ambient>0.3 0.3 0.35 1</ambient>
+            <diffuse>0.4 0.4 0.45 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    
+
+      <link name="step_04">
+        <pose>1.0125 0.0000 0.5400 0 0 0.000000</pose>
+        <collision name="col">
+          <geometry><box><size>0.225 2.5 0.12</size></box></geometry>
+          <surface><friction><ode><mu>10.0</mu><mu2>10.0</mu2></ode></friction></surface>
+        </collision>
+        <visual name="vis">
+          <geometry><box><size>0.225 2.5 0.12</size></box></geometry>
+          <material>
+            <ambient>0.3 0.3 0.35 1</ambient>
+            <diffuse>0.4 0.4 0.45 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    
+
+      <link name="step_05">
+        <pose>1.2375 0.0000 0.6600 0 0 0.000000</pose>
+        <collision name="col">
+          <geometry><box><size>0.225 2.5 0.12</size></box></geometry>
+          <surface><friction><ode><mu>10.0</mu><mu2>10.0</mu2></ode></friction></surface>
+        </collision>
+        <visual name="vis">
+          <geometry><box><size>0.225 2.5 0.12</size></box></geometry>
+          <material>
+            <ambient>0.3 0.3 0.35 1</ambient>
+            <diffuse>0.4 0.4 0.45 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    
+
+      <link name="step_06">
+        <pose>1.4625 0.0000 0.7800 0 0 0.000000</pose>
+        <collision name="col">
+          <geometry><box><size>0.225 2.5 0.12</size></box></geometry>
+          <surface><friction><ode><mu>10.0</mu><mu2>10.0</mu2></ode></friction></surface>
+        </collision>
+        <visual name="vis">
+          <geometry><box><size>0.225 2.5 0.12</size></box></geometry>
+          <material>
+            <ambient>0.3 0.3 0.35 1</ambient>
+            <diffuse>0.4 0.4 0.45 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    
+
+      <link name="step_07">
+        <pose>1.6875 0.0000 0.9000 0 0 0.000000</pose>
+        <collision name="col">
+          <geometry><box><size>0.225 2.5 0.12</size></box></geometry>
+          <surface><friction><ode><mu>10.0</mu><mu2>10.0</mu2></ode></friction></surface>
+        </collision>
+        <visual name="vis">
+          <geometry><box><size>0.225 2.5 0.12</size></box></geometry>
+          <material>
+            <ambient>0.3 0.3 0.35 1</ambient>
+            <diffuse>0.4 0.4 0.45 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    
+
+      <link name="step_08">
+        <pose>1.9125 0.0000 1.0200 0 0 0.000000</pose>
+        <collision name="col">
+          <geometry><box><size>0.225 2.5 0.12</size></box></geometry>
+          <surface><friction><ode><mu>10.0</mu><mu2>10.0</mu2></ode></friction></surface>
+        </collision>
+        <visual name="vis">
+          <geometry><box><size>0.225 2.5 0.12</size></box></geometry>
+          <material>
+            <ambient>0.3 0.3 0.35 1</ambient>
+            <diffuse>0.4 0.4 0.45 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    
+
+      <link name="step_09">
+        <pose>2.1375 0.0000 1.1400 0 0 0.000000</pose>
+        <collision name="col">
+          <geometry><box><size>0.225 2.5 0.12</size></box></geometry>
+          <surface><friction><ode><mu>10.0</mu><mu2>10.0</mu2></ode></friction></surface>
+        </collision>
+        <visual name="vis">
+          <geometry><box><size>0.225 2.5 0.12</size></box></geometry>
+          <material>
+            <ambient>0.3 0.3 0.35 1</ambient>
+            <diffuse>0.4 0.4 0.45 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    
+
+      <link name="step_10">
+        <pose>2.3625 0.0000 1.2600 0 0 0.000000</pose>
+        <collision name="col">
+          <geometry><box><size>0.225 2.5 0.12</size></box></geometry>
+          <surface><friction><ode><mu>10.0</mu><mu2>10.0</mu2></ode></friction></surface>
+        </collision>
+        <visual name="vis">
+          <geometry><box><size>0.225 2.5 0.12</size></box></geometry>
+          <material>
+            <ambient>0.3 0.3 0.35 1</ambient>
+            <diffuse>0.4 0.4 0.45 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    
+
+      <link name="step_11">
+        <pose>2.5875 0.0000 1.3800 0 0 0.000000</pose>
+        <collision name="col">
+          <geometry><box><size>0.225 2.5 0.12</size></box></geometry>
+          <surface><friction><ode><mu>10.0</mu><mu2>10.0</mu2></ode></friction></surface>
+        </collision>
+        <visual name="vis">
+          <geometry><box><size>0.225 2.5 0.12</size></box></geometry>
+          <material>
+            <ambient>0.3 0.3 0.35 1</ambient>
+            <diffuse>0.4 0.4 0.45 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    
+
+      <link name="step_12">
+        <pose>2.8125 0.0000 1.5000 0 0 0.000000</pose>
+        <collision name="col">
+          <geometry><box><size>0.225 2.5 0.12</size></box></geometry>
+          <surface><friction><ode><mu>10.0</mu><mu2>10.0</mu2></ode></friction></surface>
+        </collision>
+        <visual name="vis">
+          <geometry><box><size>0.225 2.5 0.12</size></box></geometry>
+          <material>
+            <ambient>0.3 0.3 0.35 1</ambient>
+            <diffuse>0.4 0.4 0.45 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    
+
+      <link name="step_13">
+        <pose>3.0375 0.0000 1.6200 0 0 0.000000</pose>
+        <collision name="col">
+          <geometry><box><size>0.225 2.5 0.12</size></box></geometry>
+          <surface><friction><ode><mu>10.0</mu><mu2>10.0</mu2></ode></friction></surface>
+        </collision>
+        <visual name="vis">
+          <geometry><box><size>0.225 2.5 0.12</size></box></geometry>
+          <material>
+            <ambient>0.3 0.3 0.35 1</ambient>
+            <diffuse>0.4 0.4 0.45 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    
+
+      <link name="step_14">
+        <pose>3.2625 0.0000 1.7400 0 0 0.000000</pose>
+        <collision name="col">
+          <geometry><box><size>0.225 2.5 0.12</size></box></geometry>
+          <surface><friction><ode><mu>10.0</mu><mu2>10.0</mu2></ode></friction></surface>
+        </collision>
+        <visual name="vis">
+          <geometry><box><size>0.225 2.5 0.12</size></box></geometry>
+          <material>
+            <ambient>0.3 0.3 0.35 1</ambient>
+            <diffuse>0.4 0.4 0.45 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    
+
+      <link name="step_15">
+        <pose>3.4875 0.0000 1.8600 0 0 0.000000</pose>
+        <collision name="col">
+          <geometry><box><size>0.225 2.5 0.12</size></box></geometry>
+          <surface><friction><ode><mu>10.0</mu><mu2>10.0</mu2></ode></friction></surface>
+        </collision>
+        <visual name="vis">
+          <geometry><box><size>0.225 2.5 0.12</size></box></geometry>
+          <material>
+            <ambient>0.3 0.3 0.35 1</ambient>
+            <diffuse>0.4 0.4 0.45 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    
+
+      <link name="step_16">
+        <pose>3.7125 0.0000 1.9800 0 0 0.000000</pose>
+        <collision name="col">
+          <geometry><box><size>0.225 2.5 0.12</size></box></geometry>
+          <surface><friction><ode><mu>10.0</mu><mu2>10.0</mu2></ode></friction></surface>
+        </collision>
+        <visual name="vis">
+          <geometry><box><size>0.225 2.5 0.12</size></box></geometry>
+          <material>
+            <ambient>0.3 0.3 0.35 1</ambient>
+            <diffuse>0.4 0.4 0.45 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    
+
+      <link name="step_17">
+        <pose>3.9375 0.0000 2.1000 0 0 0.000000</pose>
+        <collision name="col">
+          <geometry><box><size>0.225 2.5 0.12</size></box></geometry>
+          <surface><friction><ode><mu>10.0</mu><mu2>10.0</mu2></ode></friction></surface>
+        </collision>
+        <visual name="vis">
+          <geometry><box><size>0.225 2.5 0.12</size></box></geometry>
+          <material>
+            <ambient>0.3 0.3 0.35 1</ambient>
+            <diffuse>0.4 0.4 0.45 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    
+
+      <link name="step_18">
+        <pose>4.1625 0.0000 2.2200 0 0 0.000000</pose>
+        <collision name="col">
+          <geometry><box><size>0.225 2.5 0.12</size></box></geometry>
+          <surface><friction><ode><mu>10.0</mu><mu2>10.0</mu2></ode></friction></surface>
+        </collision>
+        <visual name="vis">
+          <geometry><box><size>0.225 2.5 0.12</size></box></geometry>
+          <material>
+            <ambient>0.3 0.3 0.35 1</ambient>
+            <diffuse>0.4 0.4 0.45 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    
+
+      <link name="step_19">
+        <pose>4.3875 0.0000 2.3400 0 0 0.000000</pose>
+        <collision name="col">
+          <geometry><box><size>0.225 2.5 0.12</size></box></geometry>
+          <surface><friction><ode><mu>10.0</mu><mu2>10.0</mu2></ode></friction></surface>
+        </collision>
+        <visual name="vis">
+          <geometry><box><size>0.225 2.5 0.12</size></box></geometry>
+          <material>
+            <ambient>0.3 0.3 0.35 1</ambient>
+            <diffuse>0.4 0.4 0.45 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    
+
+      <link name="step_20">
+        <pose>4.6125 0.0000 2.4600 0 0 0.000000</pose>
+        <collision name="col">
+          <geometry><box><size>0.225 2.5 0.12</size></box></geometry>
+          <surface><friction><ode><mu>10.0</mu><mu2>10.0</mu2></ode></friction></surface>
+        </collision>
+        <visual name="vis">
+          <geometry><box><size>0.225 2.5 0.12</size></box></geometry>
+          <material>
+            <ambient>0.3 0.3 0.35 1</ambient>
+            <diffuse>0.4 0.4 0.45 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    
+
+      <link name="step_21">
+        <pose>4.8375 0.0000 2.5800 0 0 0.000000</pose>
+        <collision name="col">
+          <geometry><box><size>0.225 2.5 0.12</size></box></geometry>
+          <surface><friction><ode><mu>10.0</mu><mu2>10.0</mu2></ode></friction></surface>
+        </collision>
+        <visual name="vis">
+          <geometry><box><size>0.225 2.5 0.12</size></box></geometry>
+          <material>
+            <ambient>0.3 0.3 0.35 1</ambient>
+            <diffuse>0.4 0.4 0.45 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    
+
+      <link name="step_22">
+        <pose>5.0625 0.0000 2.7000 0 0 0.000000</pose>
+        <collision name="col">
+          <geometry><box><size>0.225 2.5 0.12</size></box></geometry>
+          <surface><friction><ode><mu>10.0</mu><mu2>10.0</mu2></ode></friction></surface>
+        </collision>
+        <visual name="vis">
+          <geometry><box><size>0.225 2.5 0.12</size></box></geometry>
+          <material>
+            <ambient>0.3 0.3 0.35 1</ambient>
+            <diffuse>0.4 0.4 0.45 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    
+
+      <link name="step_23">
+        <pose>5.2875 0.0000 2.8200 0 0 0.000000</pose>
+        <collision name="col">
+          <geometry><box><size>0.225 2.5 0.12</size></box></geometry>
+          <surface><friction><ode><mu>10.0</mu><mu2>10.0</mu2></ode></friction></surface>
+        </collision>
+        <visual name="vis">
+          <geometry><box><size>0.225 2.5 0.12</size></box></geometry>
+          <material>
+            <ambient>0.3 0.3 0.35 1</ambient>
+            <diffuse>0.4 0.4 0.45 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    
+
+      <link name="step_24">
+        <pose>5.5125 0.0000 2.9400 0 0 0.000000</pose>
+        <collision name="col">
+          <geometry><box><size>0.225 2.5 0.12</size></box></geometry>
+          <surface><friction><ode><mu>10.0</mu><mu2>10.0</mu2></ode></friction></surface>
+        </collision>
+        <visual name="vis">
+          <geometry><box><size>0.225 2.5 0.12</size></box></geometry>
+          <material>
+            <ambient>0.3 0.3 0.35 1</ambient>
+            <diffuse>0.4 0.4 0.45 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    
+
+      <link name="step_25">
+        <pose>5.7375 0.0000 3.0600 0 0 0.000000</pose>
+        <collision name="col">
+          <geometry><box><size>0.225 2.5 0.12</size></box></geometry>
+          <surface><friction><ode><mu>10.0</mu><mu2>10.0</mu2></ode></friction></surface>
+        </collision>
+        <visual name="vis">
+          <geometry><box><size>0.225 2.5 0.12</size></box></geometry>
+          <material>
+            <ambient>0.3 0.3 0.35 1</ambient>
+            <diffuse>0.4 0.4 0.45 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    
+
+      <link name="step_26">
+        <pose>5.9625 0.0000 3.1800 0 0 0.000000</pose>
+        <collision name="col">
+          <geometry><box><size>0.225 2.5 0.12</size></box></geometry>
+          <surface><friction><ode><mu>10.0</mu><mu2>10.0</mu2></ode></friction></surface>
+        </collision>
+        <visual name="vis">
+          <geometry><box><size>0.225 2.5 0.12</size></box></geometry>
+          <material>
+            <ambient>0.3 0.3 0.35 1</ambient>
+            <diffuse>0.4 0.4 0.45 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    
+
+      <link name="step_27">
+        <pose>6.1875 0.0000 3.3000 0 0 0.000000</pose>
+        <collision name="col">
+          <geometry><box><size>0.225 2.5 0.12</size></box></geometry>
+          <surface><friction><ode><mu>10.0</mu><mu2>10.0</mu2></ode></friction></surface>
+        </collision>
+        <visual name="vis">
+          <geometry><box><size>0.225 2.5 0.12</size></box></geometry>
+          <material>
+            <ambient>0.3 0.3 0.35 1</ambient>
+            <diffuse>0.4 0.4 0.45 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    
+
+      <link name="top_platform">
+        <pose>7.9125 0.0000 3.3800 0 0 0.000000</pose>
+        <collision name="col">
+          <geometry><box><size>3.0 2.5 0.04</size></box></geometry>
+          <surface><friction><ode><mu>10.0</mu><mu2>10.0</mu2></ode></friction></surface>
+        </collision>
+        <visual name="vis">
+          <geometry><box><size>3.0 2.5 0.04</size></box></geometry>
+          <material>
+            <ambient>0.7 0.7 0.75 1</ambient>
+            <diffuse>0.8 0.8 0.85 1</diffuse>
+          </material>
+        </visual>
+      </link>
+
+    </model>
+  </world>
+</sdf>

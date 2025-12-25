@@ -1,0 +1,63 @@
+/**/controller_manager:
+  ros__parameters:
+    update_rate: 100  # Hz
+
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+
+/**/diff_drive_base_controller:
+  ros__parameters:
+    type: diff_drive_controller/DiffDriveController
+
+    # Your 4-wheel differential drive (2 per side)
+    left_wheel_names:  ["frontleftwheel", "backleftwheel"]   # FL, BL
+    right_wheel_names: ["frontrightwheel", "backrightwheel"]   # FR, BR
+
+    # --- Geometry (EDIT THESE to match your model) ---
+    wheel_separation: 0.25      # meters (distance between left & right wheel centers)
+    wheel_radius: 0.10          # meters (radius of the wheels)
+    # -------------------------------------------------
+
+    wheel_separation_multiplier: 1.0
+    left_wheel_radius_multiplier: 1.0
+    right_wheel_radius_multiplier: 1.0
+
+    publish_rate: 50.0
+    odom_frame_id: odom
+    base_frame_id: base_link
+    pose_covariance_diagonal : [0.001, 0.001, 0.0, 0.0, 0.0, 0.01]
+    twist_covariance_diagonal: [0.001, 0.0,   0.0, 0.0, 0.0, 0.01]
+
+    open_loop: false
+    publish_odom: true 
+    enable_odom_tf: true
+
+    odom_publisher_rate: 50.0
+
+    cmd_vel_timeout: 0.5
+    use_stamped_vel: true
+
+    # Velocity and acceleration limits
+    linear.x.has_velocity_limits: true
+    linear.x.has_acceleration_limits: true
+    linear.x.max_velocity: 1.0
+    linear.x.min_velocity: -1.0
+    linear.x.max_acceleration: 1.0
+    linear.x.max_jerk: .NAN
+    linear.x.min_jerk: .NAN
+
+    angular.z.has_velocity_limits: true
+    angular.z.has_acceleration_limits: true
+    angular.z.max_velocity: 1.0
+    angular.z.min_velocity: -1.0
+    angular.z.max_acceleration: 1.0
+    angular.z.min_acceleration: -1.0
+    angular.z.max_jerk: .NAN
+    angular.z.min_jerk: .NAN
+
+/**/leg_position_controller:
+  ros__parameters:
+    type: forward_command_controller/ForwardCommandController
+    joints: ["frontlegs", "backlegs"]   # front & rear pitch (together)
+    interface_name: position
+
