@@ -1,7 +1,7 @@
 # Extended Kalman Filter (EKF) Based State Estimation for a Mobile Robot in ROS 2
 
 ## Overview
-This repository presents the implementation and evaluation of an **Extended Kalman Filter (EKF)**–based state estimation framework for a **differential-drive indoor mobile robot**, developed as part of a **Final Year Project**.
+This repository presents the implementation and evaluation of an **Extended Kalman Filter (EKF)**–based state estimation framework for a **differential-drive indoor mobile robot**.
 
 The system is implemented using **ROS 2 Jazzy** and validated in a **Gazebo simulation environment**, with trajectory visualization performed using **RViz**. A controlled noise model is introduced to simulate realistic sensor uncertainty, and the effectiveness of the EKF is demonstrated through both qualitative trajectory comparison and quantitative **Root Mean Square Error (RMSE)** analysis.
 
